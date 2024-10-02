@@ -1,0 +1,9 @@
+streamlit
+pandas
+numpy
+psycopg2-binary
+sqlalchemy
+plotly
+streamlit-option-menu
+st_pages
+
