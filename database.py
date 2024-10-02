@@ -8,9 +8,16 @@ import streamlit as st
 import time
 from cachetools import cached, TTLCache
 
-# Database configuration
-db_config = st.secrets["connections"]["postgresql"]
-DATABASE_URL = f"postgresql+psycopg2://{db_config['username']}:{db_config['password']}@{db_config['host']}:{db_config['port']}/{db_config['database']}"
+username = "postgres.qshtpwzpnifujdbwteqe"
+password = "Insightpilot3421$"
+host = "aws-0-ap-southeast-1.pooler.supabase.com"
+port = "6543"
+database = "postgres"
+
+# Ensure SSL mode is required for Supabase connections
+DATABASE_URL = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}?sslmode=require"
+
+
 
 # Create engine and metadata
 engine = create_engine(DATABASE_URL, poolclass=QueuePool, pool_size=10, max_overflow=20)
